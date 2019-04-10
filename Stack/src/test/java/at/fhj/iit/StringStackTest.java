@@ -58,9 +58,16 @@ public class StringStackTest {
      */
 
     @Test
-    public void testPushTrue() throws Exception{
+    public void testPushTrue() throws Exception {
         s.push("something");
         assertEquals("something", s.pop());
+    }
+
+    @Test
+    public void testIsNotEmptyAfterPush() throws Exception {
+        s.push("x");
+        assertFalse(s.isEmpty());
+
     }
 
 }
