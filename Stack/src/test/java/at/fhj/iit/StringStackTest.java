@@ -2,6 +2,7 @@ package at.fhj.iit;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class StringStackTest {
@@ -49,7 +50,7 @@ public class StringStackTest {
     @Test
     public void testPushPop() throws Exception {
         s.push("x");
-        assertEquals("x",s.pop());
+        assertEquals("x", s.pop());
         assertTrue(s.isEmpty());
     }
 
@@ -67,7 +68,27 @@ public class StringStackTest {
     public void testIsNotEmptyAfterPush() throws Exception {
         s.push("x");
         assertFalse(s.isEmpty());
-
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testExceptionCapacityUnderOne() throws Exception {
+        Stack x = new StringStack(0);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testOutOfBounds() {
+        s.push("a");
+        s.push("b");
+        s.push("c");
+        s.push("d");
+        s.push("e");
+        s.push("f");
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testExceptionPopIfEmpty() throws Exception {
+        s.pop();
+    }
+
 
 }
