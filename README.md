@@ -1,2 +1,2 @@
 # 19-Abgabe03-Khair-Dietinger
-Creating test cases for stack usint JUnit
+Creating test cases for stack using JUnit
