@@ -57,4 +57,10 @@ public class StringStackTest {
      * Feel Free to insert other test cases for the String Stack Implementation !!!
      */
 
+    @Test
+    public void testPushTrue() throws Exception{
+        s.push("something");
+        assertEquals("something", s.pop());
+    }
+
 }
